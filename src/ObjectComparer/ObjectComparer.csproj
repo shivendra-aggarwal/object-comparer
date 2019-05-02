@@ -41,6 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comparer.cs" />
+    <Compile Include="Comparison\ArbitraryTypes\IntegerComparison.cs" />
+    <Compile Include="Comparison\ArbitraryTypes\StringComparison.cs" />
+    <Compile Include="Comparison\ArbitraryTypes\StudentComparison.cs" />
+    <Compile Include="Comparison\ArbitraryTypes\StudentListComparison.cs" />
+    <Compile Include="Comparison\ComparisonStrategyProvider.cs" />
+    <Compile Include="Comparison\IComparison.cs" />
+    <Compile Include="Model\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -16,7 +16,9 @@
 /$tf
 
 /src/ObjectComparer/packages
+src/packages/
 
+/src/.vs
 /src/ObjectComparer/.vs
 
 src/ObjectComparer.Tests
