@@ -11,7 +11,7 @@ namespace ObjectComparer.Comparison.ArbitraryTypes
     {
         public bool IsSimilar(List<Student> first, List<Student> second)
         {
-            throw new NotImplementedException();
+            return first.Equals(second);
         }
     }
 }

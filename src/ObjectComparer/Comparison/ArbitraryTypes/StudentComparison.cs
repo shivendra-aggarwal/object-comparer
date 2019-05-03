@@ -11,7 +11,7 @@ namespace ObjectComparer.Comparison.ArbitraryTypes
     {
         public bool IsSimilar(Student first, Student second)
         {
-            return Equals(first, second);
+            return first.Equals(second);
         }
     }
 }
