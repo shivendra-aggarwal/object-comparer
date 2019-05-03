@@ -11,7 +11,25 @@ namespace ObjectComparer.Comparison.ArbitraryTypes
     {
         public bool IsSimilar(List<Student> first, List<Student> second)
         {
-            return first.Equals(second);
+            bool result = default(bool);
+
+            if (first == null && second == null)
+            {
+                return true;
+            }
+
+            result = first.Count == second.Count;
+
+            for (int i = 0; i < first.Count; i++)
+            {
+                if (!first[i].Equals(second[i]))
+                {
+                    result = false;
+                    break;
+                }
+            }
+
+            return result;
         }
     }
 }
