@@ -1,26 +1,29 @@
-﻿using ObjectComp = ObjectComparer.Comparison.ArbitraryTypes;
+﻿using ObjectComparer.Model;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ObjectComparer.Model;
+using ObjectComp = ObjectComparer.Comparison.ArbitraryTypes;
 
 namespace ObjectComparer.Comparison
 {
+    /// <summary>
+    /// this class contains all comparison strategy mapping with respect to its implementation
+    /// </summary>
     public static class ComparisonStrategyProvider
     {
-        private static IDictionary<Type, object> strategyMapper;
-
         static ComparisonStrategyProvider()
         {
-            strategyMapper = new Dictionary<Type, object>();
-            StrategyMapper.Add(typeof(int), new ObjectComp.IntegerComparison());
-            StrategyMapper.Add(typeof(string), new ObjectComp.StringComparison());
-            StrategyMapper.Add(typeof(Student), new ObjectComp.StudentComparison());
-            StrategyMapper.Add(typeof(List<Student>), new ObjectComp.StudentListComparison());
+            StrategyMapper = new Dictionary<Type, object>
+            {
+                {typeof(int), new ObjectComp.IntegerComparison()},
+                {typeof(string), new ObjectComp.StringComparison()},
+                {typeof(Student), new ObjectComp.StudentComparison()},
+                {typeof(List<Student>), new ObjectComp.StudentListComparison()}
+            };
         }
 
-        public static IDictionary<Type, object> StrategyMapper { get => strategyMapper; }
+        /// <summary>
+        /// this readonly property is to get all mappings for different arbitrary type comparison implementation
+        /// </summary>
+        public static IDictionary<Type, object> StrategyMapper { get; }
     }
 }

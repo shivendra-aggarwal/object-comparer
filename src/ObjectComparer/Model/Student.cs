@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ObjectComparer.Model
 {
@@ -12,6 +9,11 @@ namespace ObjectComparer.Model
         public string Name { get; set; }
         public int[] Marks { get; set; }
 
+        /// <summary>
+        /// Equal method to compare other object passing as parameter
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
         public bool Equals(Student other)
         {
             if (other == null)

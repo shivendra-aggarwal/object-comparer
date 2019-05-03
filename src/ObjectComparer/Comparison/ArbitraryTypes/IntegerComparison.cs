@@ -1,16 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ObjectComparer.Comparison.ArbitraryTypes
+﻿namespace ObjectComparer.Comparison.ArbitraryTypes
 {
+    /// <summary>
+    /// Integer comparison implementation
+    /// </summary>
     public class IntegerComparison : IComparison<int>
     {
+        /// <summary>
+        /// this method will compare in between two integers
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
         public bool IsSimilar(int first, int second)
         {
-            return int.Equals(first, second);
+            return Equals(first, second);
         }
     }
 }

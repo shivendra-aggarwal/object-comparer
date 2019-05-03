@@ -1,14 +1,19 @@
 ﻿using ObjectComparer.Model;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ObjectComparer.Comparison.ArbitraryTypes
 {
+    /// <summary>
+    /// Student list comparison implementation
+    /// </summary>
     public class StudentListComparison : IComparison<List<Student>>
     {
+        /// <summary>
+        /// this method will compare in between two lists of student type
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
         public bool IsSimilar(List<Student> first, List<Student> second)
         {
             bool result = default(bool);
@@ -18,14 +23,17 @@ namespace ObjectComparer.Comparison.ArbitraryTypes
                 return true;
             }
 
-            result = first.Count == second.Count;
-
-            for (int i = 0; i < first.Count; i++)
+            if (first != null)
             {
-                if (!first[i].Equals(second[i]))
+                result = first.Count == second.Count;
+
+                for (int i = 0; i < first.Count; i++)
                 {
-                    result = false;
-                    break;
+                    if (!first[i].Equals(second[i]))
+                    {
+                        result = false;
+                        break;
+                    }
                 }
             }
 

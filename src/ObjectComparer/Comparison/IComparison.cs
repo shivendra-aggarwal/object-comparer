@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ObjectComparer.Comparison
+﻿namespace ObjectComparer.Comparison
 {
-    public interface IComparison<T>
+    /// <summary>
+    /// Generic contract for various arbitrary type comparison implementation
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public interface IComparison<in T>
     {
         bool IsSimilar(T first, T second);
     }
